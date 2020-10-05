@@ -30,7 +30,6 @@ func NewClient(config *Config) (*Client, error) {
 		return nil, fmt.Errorf("invalid credentials provided")
 	}
 
-	// TODO: Use own httpClient
 	return newClient(config, http.DefaultClient), nil
 }
 

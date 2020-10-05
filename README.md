@@ -11,7 +11,7 @@
 gofrog is a service to fetch most downloaded artifacts for given repository on an Artifactory instance. It uses the [Artifactory REST API](https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API).
 
 - **Robust CI/CD pipeline**: Linting, unit tests, builds and deploys are done using GitHub actions
-- **Deployment**: [gofrog.herokuapp.com](gofrog.herokuapp.com)
+- **Deployment**: [gofrog.herokuapp.com](gofrog.herokuapp.com) (Temporary credentials: Username=gofrog Password=gofrog)
 - **Approach**: Fetching the top 2 most popular artifacts has been implemented using a max-heap so that the solution is extensible to fetching top 'n' most popular artifacts. It also utilizes Go's excellent concurrency primitives to speed up processing artifacts details for given repository.
 
 ### API Specification

@@ -7,11 +7,11 @@ type Artifact struct {
 	Name       string `json:"name"`
 	Type       string `json:"type"`
 	Size       int    `json:"size"`
-	Created    string `json:"created"` // should be timestamp
+	Created    string `json:"created"`
 	CreatedBy  string `json:"created_by"`
-	Modified   string `json:"modified"` // should be timestamp
+	Modified   string `json:"modified"`
 	ModifiedBy string `json:"modified_by"`
-	Updated    string `json:"updated"` // should be timestamp
+	Updated    string `json:"updated"`
 }
 
 // AQLSearchResponse represents response obtained from AQL repo search endpoint
