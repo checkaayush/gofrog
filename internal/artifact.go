@@ -15,6 +15,7 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
+// Controls concurrency for fetching FileStatistics for artifacts in given repo
 var numWorkers = 10
 
 type artifactDownloadStats struct {

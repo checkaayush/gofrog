@@ -12,12 +12,31 @@ gofrog is a service to fetch most downloaded artifacts for given repository on a
 
 - **Robust CI/CD pipeline**: Linting, unit tests, builds and deploys are done using GitHub actions
 - **Deployment**: [gofrog.herokuapp.com](gofrog.herokuapp.com) (Temporary credentials: Username=gofrog Password=gofrog)
-- **Approach**: Fetching the top 2 most popular artifacts has been implemented using a max-heap so that the solution is extensible to fetching top 'n' most popular artifacts. It also utilizes Go's excellent concurrency primitives to speed up processing artifacts details for given repository.
+- **Approach**: Fetching the top 2 most popular artifacts for a given repository has been implemented using a max-heap so that the solution is extensible to fetching top 'n' most popular artifacts. It also utilizes Go's excellent concurrency primitives to speed up processing artifact details for given repository.
 
 ### API Specification
 
 - GET `/v1/health` Health check to indicate API health
 - GET `/v1/mostPopular?repo=jcenter-cache&count=2` Fetches top 2 most downloaded artifacts in repo `jcenter-cache`
+
+Sample JSON Response:
+```json
+{
+  "results": [
+    {
+      "path": "jcenter-cache/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom",
+      "downloadLink": "http://<IP_ADDRESS>:80/artifactory/jcenter-cache/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom",
+      "downloads": 30
+    },
+    {
+      "path": "jcenter-cache/org/apache/struts/struts2-core/2.3.14/struts2-core-2.3.14.pom",
+      "downloadLink": "http://<IP_ADDRESS>:80/artifactory/jcenter-cache/org/apache/struts/struts2-core/2.3.14/struts2-core-2.3.14.pom",
+      "downloads": 26
+    }
+  ],
+  "error": ""
+}
+```
 
 ## Development
 

@@ -1,4 +1,4 @@
 [artifactory]
-  base_url = "http://35.225.153.120"
-  user = "admin"
-  password = "6eO3DV7Zyr"
+  base_url = "https://54ac953f-6455-4fca-864e-18dfcb3764b5.mock.pstmn.io"
+  user = "user"
+  password = "pass"
