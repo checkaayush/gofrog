@@ -21,6 +21,7 @@ lint:
 test:
 	# -race requires cgo; hence CGO_ENABLED=1
 	CGO_ENABLED=1 go test -coverprofile=coverage.out -v -race -cover ./...
+	printf "\nTotal Unit Test Coverage: " && go tool cover -func coverage.out | grep total | awk '{print $$3}'
 
 cover:
 	CGO_ENABLED=0 go test -coverprofile=coverage.out ./... && go tool cover -html=coverage.out
